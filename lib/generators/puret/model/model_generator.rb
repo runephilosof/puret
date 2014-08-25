@@ -21,7 +21,7 @@ module Puret
 
       # create migration
       def copy_migration_template
-        migration_template "migration.rb", "db/migrate/create_#{translations_table_name}"
+        migration_template "migration.rb", "db/migrate/create_#{translations_table_name}.rb"
       end
     end
   end
