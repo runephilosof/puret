@@ -55,7 +55,7 @@ module Puret
       def make_it_puret!
         include InstanceMethods
 
-        has_many :translations, :class_name => "#{self.to_s}Translation", :dependent => :destroy, :order => "created_at DESC"
+        has_many :translations, -> { order(created_at: :desc) }, :class_name => "#{self.to_s}Translation", :dependent => :destroy
         validates_associated :translations
         after_save :update_translations!
       end
